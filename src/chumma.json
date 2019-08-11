@@ -1,0 +1,110 @@
+{
+    "ygPerms": {
+        "resourceCapabilityList": [{
+                "resourceType": "GROUP",
+                "capabilities": [{
+                        "name": "READ"
+                    },
+                    {
+                        "name": "JOIN"
+                    }
+                ]
+            },
+            {
+                "resourceType": "PHOTO",
+                "capabilities": []
+            },
+            {
+                "resourceType": "FILE",
+                "capabilities": []
+            },
+            {
+                "resourceType": "MEMBER",
+                "capabilities": []
+            },
+            {
+                "resourceType": "LINK",
+                "capabilities": []
+            },
+            {
+                "resourceType": "CALENDAR",
+                "capabilities": []
+            },
+            {
+                "resourceType": "DATABASE",
+                "capabilities": []
+            },
+            {
+                "resourceType": "POLL",
+                "capabilities": []
+            },
+            {
+                "resourceType": "MESSAGE",
+                "capabilities": [{
+                    "name": "READ"
+                }]
+            },
+            {
+                "resourceType": "PENDING_MESSAGE",
+                "capabilities": []
+            },
+            {
+                "resourceType": "ATTACHMENTS",
+                "capabilities": [{
+                    "name": "READ"
+                }]
+            },
+            {
+                "resourceType": "PHOTOMATIC_ALBUMS",
+                "capabilities": []
+            },
+            {
+                "resourceType": "MEMBERSHIP_TYPE",
+                "capabilities": []
+            },
+            {
+                "resourceType": "POST",
+                "capabilities": [{
+                    "name": "READ"
+                }]
+            },
+            {
+                "resourceType": "PIN",
+                "capabilities": []
+            }
+        ],
+        "groupUrl": "groups.yahoo.com",
+        "intlCode": "us"
+    },
+    "comscore": "pageview_candidate",
+    "ygData": {
+        "userId": 269330685,
+        "authorName": "Vyas Thottathil",
+        "from": "Vyas Thottathil &lt;vyas.thottathil@...&gt;",
+        "profile": "vyast",
+        "replyTo": "LIST",
+        "senderId": "Iuon7C6rwOed_v4cT07aGjVrMRjgx4oXhSbMDyJiw-MQyNX0lsjyZI_ahFltwvIpIMMO6tTpE5br9efpEzjZs48oG5vuUyPLchPtClMesSMN",
+        "spamInfo": {
+            "isSpam": false,
+            "reason": "12"
+        },
+        "subject": "Test mail to keep group active",
+        "postDate": "1359364914",
+        "msgId": 1,
+        "canDelete": false,
+        "contentTrasformed": false,
+        "systemMessage": false,
+        "headers": {
+            "messageIdInHeader": "PENBTFJYNWpSWWRCV1RGaUNTLUhIb2FOWDRrQm1WQVltcFRUcTRkU1BxZ3RlbUFwazNxUUBtYWlsLmdtYWlsLmNvbT4="
+        },
+        "prevInTopic": 0,
+        "nextInTopic": 0,
+        "prevInTime": 0,
+        "nextInTime": 2,
+        "topicId": 1,
+        "numMessagesInTopic": 1,
+        "msgSnippet": "Test mail to keep group active",
+        "messageBody": "<div id=\"ygrps-yiv-95535562\">Test mail to keep group active</div>",
+        "specialLinks": []
+    }
+}
