@@ -38,7 +38,9 @@ app.get('/api/getdetails', (req, res) => {
             }
         }).then(function () {
             //console.log(messagesjson);
-            res.json(messagesjson);
+            var shortmessagejson = messagesjson.slice(0,messageCount);
+            messagesjson = [];
+            res.json(shortmessagejson);
         })
 })
 
