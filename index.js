@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 
 var messageCount = 0;
-var messagesjson = [];
+// var messagesjson = [];
 var basicUrl = "https://groups.yahoo.com/api/v1/groups/mec2k20/messages/";
 
 function getStuff(i) {
@@ -17,10 +17,10 @@ function getStuff(i) {
 			// handle success
 			//console.log(i);
 			//var details = { "subject": response.data.ygData.subject, "msgbody": response.data.ygData.messageBody };
-			messagesjson.push({
+			return {
 				subject: response.data.ygData.subject,
 				msgbody: response.data.ygData.messageBody
-			});
+			};
 		})
 		.catch(function(error) {
 			// handle error
@@ -29,9 +29,11 @@ function getStuff(i) {
 }
 
 app.get("/api/getdetails", (req, res) => {
+	let messagesjson = [];
 	axios
 		.get("https://groups.yahoo.com/api/v1/groups/mec2k20/messages?count=100")
 		.then(function(response) {
+			messagesjson = [];
 			messageCount = response.data.ygData.messages.length;
 			console.log(response.data.ygData.messages.length);
 		})
@@ -40,7 +42,7 @@ app.get("/api/getdetails", (req, res) => {
 			//console.log(messageCount);
 			for (var i = 0; i <= messageCount; i++) {
 				console.log(i);
-				getStuff(i + 1);
+				messagesjson.push(getStuff(i + 1));
 			}
 		})
 		.then(function() {
