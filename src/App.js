@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       datas: [],
     }
-    this.handleLoad = this.handleLoad.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   getStuff() {
@@ -28,19 +28,20 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-  handleLoad() {
+  handleClick() {
     console.log(this.state);
   }
 
   componentDidMount() {
-    this.getStuff();
+    this.setState({ datas: [] });
+    this.getStuff();  
     console.log(this.state);
   }
 
   render() {
     return (
       <div className="App">
-        <button onClick={this.handleLoad}>Click Me</button>
+        <button onClick={this.handleClick}>Click Me</button>
       </div>
     );
   }
