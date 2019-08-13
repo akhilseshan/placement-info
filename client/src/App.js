@@ -15,13 +15,12 @@ class App extends Component {
   getStuff() {
     axios.get(`http://localhost:5000/api/getdetails`)
       .then(res => {
-        this.setState({ datas: res.data });
-        //console.log(this.state.datas);
-        for (var i = 2; i < this.state.datas[1].totalcount; i++) {
-          // console.log(this.state.datas[i].subject)
+        this.setState({ datas: this.state.datas.concat(res.data) });
+        for (var i = 0; i < this.state.datas.length; i++) {
+          console.log(this.state.datas[i].subject)
           const $ = cheerio.load(this.state.datas[i].msgbody);
           $('li').each(function (i, e) {
-            //console.log($(this).text());
+            console.log($(this).text());
           })
         }
       })
@@ -29,19 +28,32 @@ class App extends Component {
   }
 
   handleClick() {
-    console.log(this.state);
+    console.log(this.state.datas);
   }
 
   componentDidMount() {
-    this.setState({ datas: [] });
-    this.getStuff();  
-    console.log(this.state);
+    this.getStuff();
+    //console.log(this.state);
   }
 
   render() {
     return (
       <div className="App">
         <button onClick={this.handleClick}>Click Me</button>
+        <div>
+          {this.state.datas.map((dynamicComponent, i) => <Content
+            key={i} componentData={dynamicComponent} />)}
+        </div>
+      </div>
+    );
+  }
+}
+
+class Content extends Component {
+  render() {
+    return (
+      <div className="card">
+        <div>{this.props.componentData.subject}</div>
       </div>
     );
   }

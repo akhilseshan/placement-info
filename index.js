@@ -16,11 +16,11 @@ function getStuff(i) {
             // handle success
             //console.log(i);
             //var details = { "subject": response.data.ygData.subject, "msgbody": response.data.ygData.messageBody };
-            messagesjson.push({ "subject": response.data.ygData.subject, "msgbody": response.data.ygData.messageBody });
+            messagesjson.push({ "msgid": response.data.ygData.msgId, "subject": response.data.ygData.subject, "msgbody": response.data.ygData.messageBody });
         })
         .catch(function (error) {
             // handle error
-            //console.log(error);
+            console.log("error");
         });
 }
 
@@ -39,7 +39,9 @@ app.get('/api/getdetails', (req, res) => {
         }).then(function () {
             //console.log(messagesjson);
             var shortmessagejson = messagesjson.slice(0,messageCount);
-            messagesjson = [];
+            messagesjson = [];  
+            console.log(shortmessagejson[0]);
+            console.log(messagesjson);
             res.json(shortmessagejson);
         })
 })
