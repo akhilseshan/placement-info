@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import cheerio from 'cheerio';
+import './App.css';
 
 class App extends Component {
 
@@ -39,11 +40,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.handleClick}>Click Me</button>
-        <div>
-          {this.state.datas.map((dynamicComponent, i) => <Content
-            key={i} componentData={dynamicComponent} />)}
-        </div>
+        <header className="App-header">
+          <div>
+            {this.state.datas.map((dynamicComponent, i) => <Content
+              key={i} componentData={dynamicComponent} />)}
+          </div>
+        </header>
       </div>
     );
   }
@@ -52,8 +54,12 @@ class App extends Component {
 class Content extends Component {
   render() {
     return (
-      <div className="card">
-        <div>{this.props.componentData.subject}</div>
+      <div className="card w-100">
+        <h5 className="card-header">{this.props.componentData.subject}</h5>
+        <div className="card-body">
+          {/* <div className="card-text"></div> */}
+          {/* <a href="#" className="btn btn-primary">{}</a> */}
+        </div>
       </div>
     );
   }
